@@ -1,2 +1,2 @@
-# DIO-Projects
-Projetos utilizados na plataforma do Dio
+# Digital Innovation One - Projects
+Repositório para projetos utilizados na plataforma do Dio
