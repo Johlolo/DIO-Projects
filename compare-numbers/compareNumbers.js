@@ -1,4 +1,4 @@
-alert("Write 2 numbers and it will compare if they are equal and if their sum is greater than 10 or less than 20.");
+alert("Write 2 numbers and it will compare if they are equal and if their sum is bigger than 10 or less than 20.");
 
 var firstNumber = prompt("Write the first number.");
 var secondNumber = prompt("Write the second number.");
@@ -38,7 +38,7 @@ function numberSums(firstNumber, secondNumber) {
     } else {
         answer20 = `equal`
     }
-    return result = `Their sum is ${sum}, there is ${answer10} 10 and ${answer20} 20`
+    return result = `Their sum is ${sum}, wich is ${answer10} 10 and ${answer20} 20`
 }
 
 alert(`${compareNumbers(firstNumber, secondNumber)}. ${numberSums(firstNumber, secondNumber)}.`)
