@@ -63,25 +63,53 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-interface Dog {
+// Readonly and private
+
+// interface Dog {
+//     name: string;
+//     age: number;
+//     favoritePlace?: string;
+// }
+
+// type DogReadOnly = {
+//     readonly [K in keyof Dog]-?: Dog[K];
+// }
+
+// class MyDog implements DogReadOnly {
+//     name;
+//     age;
+//     favoritePlace;
+
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+// }
+
+// const dog = new MyDog('Jake', 6);
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Using typings.d.ts  { 1 }
+
+// import $ from "jquery";
+
+// $.fn.extend({
+//     newFunction() {
+//         console.log('New function called');
+//     }
+// });
+
+// $('body').newFunction();
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+interface Person {
     name: string;
     age: number;
-    favoritePlace?: string;
+    nationality: string;
 }
 
-type DogReadOnly = {
-    readonly [K in keyof Dog]-?: Dog[K];
+interface Brazilian extends Omit<Person, 'nationality'> {
+
 }
-
-class MyDog implements DogReadOnly {
-    name;
-    age;
-    favoritePlace;
-
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-}
-
-const dog = new MyDog('Jake', 6);
