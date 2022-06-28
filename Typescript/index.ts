@@ -1,34 +1,87 @@
 // types
 // interfaces
-/*
-interface IAnimal {
-    name: string;
-    type: 'land' | 'aquatic' | 'fly';
-    domestic: boolean;
-}
 
-interface IFeline extends IAnimal {
-    nightVistion: boolean;
-}
+// interface IAnimal {
+//     name: string;
+//     type: 'land' | 'aquatic' | 'fly';
+//     domestic: boolean;
+// }
 
-interface ICanine extends IAnimal {
-    size: 'small' | 'medium' | 'large';
-}
+// interface IFeline extends IAnimal {
+//     nightVistion: boolean;
+// }
 
-type IDomestic = IFeline | ICanine;
+// interface ICanine extends IAnimal {
+//     size: 'small' | 'medium' | 'large';
+// }
 
-const animal: IDomestic = {
-    domestic: true,
-    name: 'dog',
-    size: 'medium',
-    type: 'land',
-}
-*/
+// type IDomestic = IFeline | ICanine;
+
+// const animal: IDomestic = {
+//     domestic: true,
+//     name: 'dog',
+//     size: 'medium',
+//     type: 'land',
+// }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-const input = document.getElementById('input') as HTMLInputElement;
+// Input types
 
-input.addEventListener('input', (event) => (
-    const i = event.currentTarget as HTMLInputElement;
-    console.log(i.value)
-));
+// const input = document.getElementById('input') as HTMLInputElement;
+
+// input.addEventListener('input', (event) => {
+//     const i = event.currentTarget as HTMLInputElement;
+//     console.log(i.value);
+// });
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Generic Types
+
+// function addAppendixToList<T>(array: any[], value: T) {
+//     return array.map(item => item + value);
+// }
+
+// addAppendixToList([1, 2, 3], 'a');
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// interface IUser {
+//     id: string;
+//     email: string;
+//     position?: 'manager' | 'coordinator' | 'supervisor' | 'employee';  // When has '?' it turns optional
+// }
+
+// function redirect(user: IUser) {
+//     if (user.position) {
+//         // redirect(user.position);
+//     }
+
+//     // redirect to user's area
+// }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+interface Dog {
+    name: string;
+    age: number;
+    favoritePlace?: string;
+}
+
+type DogReadOnly = {
+    readonly [K in keyof Dog]-?: Dog[K];
+}
+
+class MyDog implements DogReadOnly {
+    name;
+    age;
+    favoritePlace;
+
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+const dog = new MyDog('Jake', 6);
