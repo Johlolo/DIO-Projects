@@ -1,6 +1,6 @@
 
-import { Router, Request, Response, NextFunction } from "express";
-import { StatusCodes } from "http-status-codes";
+import { Router, Request, Response, NextFunction } from 'express';
+import { StatusCodes } from 'http-status-codes';
 
 const statusRoute = Router();
 
