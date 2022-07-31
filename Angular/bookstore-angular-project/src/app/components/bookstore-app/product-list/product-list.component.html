@@ -1,0 +1,16 @@
+<section class="d-flex align-items-center justify-content-center flex-wrap">
+    <div class="card mx-2 my-2 col-md-4" style="width: 18rem;" *ngFor="let livro of livros">
+        <img [src]="livro.image" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h4 class="card-title">{{ livro.title }}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{ livro.subtitle }}</h6>
+            <p class="card-text">{{ livro.price }}</p>
+            <p class="card-link"></p>
+            <a [href]="livro.url" class="card-link">{{ livro.url }}</a>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-success">Comprar</button>
+            <button type="button" class="btn btn-sm btn-outline-primary">Detalhes</button>
+        </div>
+    </div>
+</section>
