@@ -1,0 +1,38 @@
+<!-- 
+    Interpolação -> {{ }} -> componente para html
+    Property / Class / Style Binding -> [] -> componente para html
+    Event Binding -> () -> html para componente
+    Two-Way Data Binding -> [(ngModel)] -> atualiza os dois ao mesmo tempo
+-->
+
+<!-- Interpolação e Class Binding -->
+<h1 [class.text-red]="textRed">O nome é {{ retornaNome() }}</h1>
+
+<!-- Property Binding -->
+<img [src]="imageUrl" [alt]="imageDesc">
+<hr>
+
+<!-- Event Binding -->
+<button (click)="clicou()">Clique</button>
+<hr>
+<input #input (keyup)="clicou2(input.value)">
+<br>
+<p>{{ input.value }}</p>
+<hr>
+<!-- Class Binding e Style Bindind -->
+<button [attr.aria-label]="buttonText" [style.backgroundColor]="bgColor">{{ buttonText }}</button>
+
+<hr>
+<!-- Two-Way Data Binding -->
+<input type="text" class="form-control" [(ngModel)]="textInput">
+<p class="text-default">{{ textInput }}</p>
+
+<hr>
+<app-button btnText="Cancelar" btnType="btn-danger" (click)="destroiComponente()"></app-button>
+<app-button btnText="Salvar" btnType="btn-success"></app-button>
+<app-button btnText="Clique aqui" btnType="btn-primary" (click)="incrementa()"></app-button>
+<app-button btnText="Voltar" btnType="btn-outline-success" (clickChildren)="clicouNoFilho($event)"></app-button>
+
+<hr>
+<!-- Ciclo de vida no Angular -->
+<app-life-cycle [number]="number" *ngIf="!destroy"></app-life-cycle>

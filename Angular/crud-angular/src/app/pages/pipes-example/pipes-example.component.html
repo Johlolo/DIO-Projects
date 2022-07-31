@@ -1,0 +1,50 @@
+<div class="form-group">
+    <label for="number">Number:</label>
+    <input type="text" [(ngModel)]="number" class="form-control" id="number">
+    <p>{{ number }}</p>
+    <button class="btn btn-success" (click)="mudaValor()">Click</button>
+</div>
+
+<div class="">
+    
+    <p>Sem formatação:</p>
+    <p>{{ number | number }}</p>
+    <hr>
+    <p>Resultado com formatação:</p>
+    <p>{{ number | number:'2.0-1' }}</p>
+    <hr>
+    <p>Resultado em moeda:</p>
+    <p>{{ number | currency:'BRL' }}</p>
+    <hr>
+    <p>Resultado em porcentagem:</p>
+    <p>{{ number | percent }}</p>
+    <hr>
+    <p>Data de hoje:</p>
+    <p>{{ date }}</p>
+    <p>{{ date | date }}</p>
+    <p>Data Formatada: {{ date | date:'dd/MM/yyyy':'GMT-0300':'en-US' }}</p>
+    <p>{{ date | date:'full' | uppercase }}</p>
+    <hr>
+    <p>{{ text | uppercase }}</p>
+    <hr>
+    <p>{{ pessoa | json }}</p>
+    <p>SLICE {{ text | slice:3:8 }}</p>
+
+</div>
+
+<div class="container">
+    <div class="col">
+        <div class="row-6">
+            <div class="form-group">
+                <label for="">Print Pipe Test: </label>
+                <input type="text" name="text" id="nome" #nome>
+                <button class="btn btn-primary" (click)="add(nome.value)">Add</button>
+            </div>
+        </div>
+        <div class="row-6">
+            <h3>Lista formatada</h3>
+            <p>Tamanho da lista {{ nomes.length }}</p>
+            <p>{{ nomes | printList }}</p>
+        </div>
+    </div>
+</div>
